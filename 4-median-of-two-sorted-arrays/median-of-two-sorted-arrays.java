@@ -5,37 +5,25 @@ class Solution {
 
         int[] merged = new int[n + m];
 
-        int p1 = 0, p2 = 0;
-        int index = 0;
-
-        while(p1 < n && p2 < m){
-            if(nums1[p1] < nums2[p2]){
-                merged[index++] = nums1[p1++]; 
-            }
-            else {
-                merged[index++] = nums2[p2++];
-            }
+        for(int i = 0; i < nums1.length; i++){
+            merged[i] = nums1[i];
         }
 
-        while(p1 < n){
-            merged[index++] = nums1[p1++];
+        for(int i = 0 ; i < nums2.length; i++){
+            merged[n + i] = nums2[i];
         }
 
-        while(p2 < m){
-            merged[index++] = nums2[p2++];
-        }
+        Arrays.sort(merged);
 
-        int mergedLength = merged.length;
-
+        int mergedLen = merged.length;
         double median = 0;
 
-        if(mergedLength % 2 == 0){
-            median = (merged[mergedLength/2] + merged[mergedLength/2 - 1]) / 2.0;
+        if(mergedLen%2 == 0){
+            median = (merged[mergedLen/2] + merged[mergedLen/2 - 1]) / 2.0;
         }
         else {
-            median = merged[mergedLength/2];
+            median  = merged[mergedLen/2];
         }
-
         return median;
     }
 }
