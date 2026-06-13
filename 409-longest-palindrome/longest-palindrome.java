@@ -7,21 +7,21 @@ class Solution {
         }
 
         int count = 0;
+        boolean hasOdd = false;
 
         for(char c : map.keySet()){
-            
-            while(map.get(c) >= 2){
-                map.put(c, map.get(c) - 2);
-                count += 2;
+            if(map.get(c) % 2 == 0){
+                count += map.get(c);
             }
+            else {
+                count += map.get(c) - 1;
+                hasOdd = true;
+            }
+        }
+        if(hasOdd){
+            count += 1;
         }
 
-        for(char c : map.keySet()){
-            if(map.get(c) == 1){
-                count += 1;
-                break;
-            }
-        }
         return count;
     }
 }
