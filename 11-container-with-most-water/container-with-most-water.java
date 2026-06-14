@@ -4,7 +4,6 @@ class Solution {
         int maxWater = 0;
 
         while(p1 < p2){
-            
             int width = p2 - p1;
             int currWater = width * Math.min(height[p1], height[p2]);
 
