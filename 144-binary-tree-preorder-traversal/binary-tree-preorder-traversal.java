@@ -18,9 +18,6 @@ class Solution {
         List<Integer> result = new ArrayList<>();
         return preOrder(root, result);
     }
-
-
-
     
     public List<Integer> preOrder(TreeNode root, List<Integer> result){
         if(root == null){
