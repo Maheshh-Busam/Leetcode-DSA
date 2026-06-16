@@ -1,4 +1,4 @@
-// Last updated: 6/16/2026, 11:40:09 PM
+// Last updated: 6/16/2026, 11:40:56 PM
 1class Solution {
 2    public int search(int[] nums, int target) {
 3        int left = 0, right = nums.length - 1;
@@ -29,17 +29,4 @@
 28        }
 29        return -1;
 30    }
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43    
-44}
+31}
