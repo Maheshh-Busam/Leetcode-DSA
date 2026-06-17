@@ -1,24 +1,22 @@
-// Last updated: 6/17/2026, 9:01:30 PM
+// Last updated: 6/17/2026, 9:03:03 PM
 1class Solution {
 2    public int removeDuplicates(int[] nums) {
-3        
-4        int n = nums.length;
+3        int n = nums.length;
+4        
 5        if(n == 0){
 6            return 0;
 7        }
 8
-9        Set<Integer> set = new LinkedHashSet();
+9        int left = 0, right = 0;
 10
-11        for(int num : nums){
-12            set.add(num);
-13        }
-14
-15        int index = 0;
-16
-17        for(int num : set){
-18            nums[index++] = num;
-19        }
-20
-21        return set.size();
-22    }
-23}
+11        while(right < n){
+12            nums[left] = nums[right];
+13
+14            while(right < n && nums[left] == nums[right]){
+15                right++;
+16            } 
+17            left++;
+18        }
+19        return left;
+20    }
+21}
