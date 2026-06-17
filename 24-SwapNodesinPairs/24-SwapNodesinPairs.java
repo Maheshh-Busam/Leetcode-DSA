@@ -1,4 +1,4 @@
-// Last updated: 6/17/2026, 8:37:18 PM
+// Last updated: 6/17/2026, 8:39:03 PM
 1/**
 2 * Definition for singly-linked list.
 3 * public class ListNode {
@@ -11,45 +11,38 @@
 10 */
 11class Solution {
 12    public ListNode swapPairs(ListNode head) {
-13        ListNode temp = head;
-14        int length = 0;
-15
-16        while(temp != null){
-17            length++;
-18            temp = temp.next;
-19        }
-20
-21        if(length <= 1){
-22            return head;
-23        }
-24
-25        ListNode prev = null;
-26        ListNode curr = head;
-27        ListNode next = curr.next;
-28
-29        head = next;
-30
-31        while(curr != null && next != null){
-32
-33            ListNode nextPair = next.next;
-34            curr.next = next.next;
-35            next.next = curr;
-36
-37            if(prev != null){
-38                prev.next = next;
-39            }
-40
-41            prev = curr;
-42
-43            curr = nextPair;
-44
-45            if(curr != null){
-46                next = curr.next;
-47            }
-48            else {
-49                next = null;
-50            }
-51        }
-52        return head;
-53    }
-54}
+13
+14        if(head == null || head.next == null){
+15            return head;
+16        }
+17
+18        ListNode prev = null;
+19        ListNode curr = head;
+20        ListNode next = curr.next;
+21
+22        head = next;
+23
+24        while(curr != null && next != null){
+25
+26            ListNode nextPair = next.next;
+27            curr.next = next.next;
+28            next.next = curr;
+29
+30            if(prev != null){
+31                prev.next = next;
+32            }
+33
+34            prev = curr;
+35
+36            curr = nextPair;
+37
+38            if(curr != null){
+39                next = curr.next;
+40            }
+41            else {
+42                next = null;
+43            }
+44        }
+45        return head;
+46    }
+47}
