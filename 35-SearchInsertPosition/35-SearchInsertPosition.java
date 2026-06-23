@@ -1,10 +1,10 @@
-// Last updated: 6/19/2026, 3:50:10 PM
+// Last updated: 6/23/2026, 10:02:05 PM
 1class Solution {
 2    public int searchInsert(int[] nums, int target) {
 3        int left = 0, right = nums.length - 1;
 4
 5        while(left <= right){
-6            int mid = (left + right) / 2;
+6            int mid = (left + right)/2;
 7
 8            if(nums[mid] == target){
 9                return mid;
