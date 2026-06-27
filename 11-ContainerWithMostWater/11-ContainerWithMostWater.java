@@ -1,10 +1,10 @@
-// Last updated: 6/27/2026, 9:59:45 AM
+// Last updated: 6/27/2026, 10:00:40 AM
 1class Solution {
 2    public int maxArea(int[] height) {
 3        int containerWithMostWater = 0;
 4        int left = 0, right = height.length - 1;
 5
-6        while(left <= right){
+6        while(left < right){
 7
 8            int width = right - left;
 9            int currentContainer = width * Math.min(height[left], height[right]);
